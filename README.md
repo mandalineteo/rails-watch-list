@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Part of Le Wagon's bootcamp challenge to make a 3-model app which introduces a many to many relationship (N:N). 
+The challenge requires students to build a Watch List which allows users to create lists and save their favourite movies.
 
-Things you may want to cover:
+User actions in the app:
 
-* Ruby version
+As a user, I can see all my movie lists
+As a user, I can create a movie list
+As a user, I can see the details of a movie list
+As a user, I can bookmark a movie inside a movie list
+As a user, I can destroy a bookmark
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*Warning the movies are seeded in the database so there is no implemention of any user action around the movie model.
