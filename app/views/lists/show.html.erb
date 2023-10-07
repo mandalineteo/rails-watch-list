@@ -1,19 +1,32 @@
-<h1><%= @list.name %></h1>
-<%= cl_image_tag @list.picture.key, height: 300, width: 400, crop: :fill %>
-<hr>
-<h2>Bookmarks</h2>
-<% @list.bookmarks.each do |bookmark| %>
-  <p>Movie Title: <%= bookmark.movie.title %></p>
-  <img src= <%= bookmark.movie.poster_url %> alt="Movie Image" width=200>
-  <p>Comment: <%= bookmark.comment %></p>
-  <%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-<% end %>
-<hr>
-<h2>Add a new bookmark</h2>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.button :submit %>
-<% end %>
-<hr>
-<%= link_to "Go back to the main page", lists_path %>
+<div class="container text-center">
+  <div class="row d-flex align-items-center p-5">
+    <div class="col">
+      <h1><%= @list.name %></h1>
+      <%= cl_image_tag @list.picture.key, height: 300, width: 400, crop: :fill %>
+    </div>
+  </div>
+  <hr>
+  <h2>Bookmarks</h2>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="col">
+      <div class="card">
+        <img src= <%= bookmark.movie.poster_url %> alt="Movie Image" class="card-img-top" width=200>
+        <div class="card-body">
+          <h5 class="card-title">Movie Title: <%= bookmark.movie.title %></h5>
+          <p class="card-text">Comment: <%= bookmark.comment %></p>
+          <%= link_to "Delete this bookmark", bookmark_path(bookmark), class: 'delete-button', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <hr>
+  <h2>Add a new bookmark</h2>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.button :submit, class: 'new-button' %>
+    <%= link_to "Back", lists_path, class: 'back-button' %>
+  <% end %>
+</div>

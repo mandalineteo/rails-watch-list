@@ -1,18 +1,18 @@
 <div class="container text-center">
   <div class="row d-flex align-items-center p-5">
     <div class="col">
-      <h1>Your movie watch-list 📺</h1>
+      <h1>Your watch-lists 📺</h1>
     </div>
   </div>
   <div class="row row-cols-1 row-cols-md-2 g-4">
   <% @lists.each do |list| %>
     <div class="col">
       <div class="card">
-        <a href="<%= list_path(list) %>" class="card-img-top">
+        <a href="<%= list_path(list) %>" class="card-img-top" alt="List Image">
           <%= cl_image_tag(list.picture.key, height: 300, width: 400, crop: :fill) %>
         </a>
         <div class="card-body">
-          <a href="<%= list_path(list) %>" class="card-title">
+          <a href="<%= list_path(list) %>" class="card-title index">
             <%= list.name %>
           </a>
         </div>
@@ -22,8 +22,8 @@
   </div>
   <div class="row d-flex align-items-center p-5">
     <div class="col">
-      <a href="<%= new_list_path %>" class="new-movie-button">
-          Add a new movie!
+      <a href="<%= new_list_path %>" class="new-button">
+          Create a new list!
         </a>
     </div>
   </div>
