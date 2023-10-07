@@ -1,0 +1,15 @@
+.new-movie-button {
+  background-color: #D2E0FB;
+  color: #3b6ca0;
+  text-decoration: none;
+  border: 1px solid #D2E0FB;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+  font-family: $cursive-font;
+  font-size: 1.5em;
+
+  &:hover {
+    background-color: #89acf3;
+  }
+}
